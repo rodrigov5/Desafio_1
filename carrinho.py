@@ -1,15 +1,13 @@
 dmax = 0
 
-entrada = input().split(" ") # 4 10.000
-n_baterias = int(entrada[0])
-dist = float(entrada[1])
+n_baterias = int(input("Qual é a quantidade de baterias? "))
+dist = float(input("Qual é o comprimento do circuito? "))
+
 bat_pos = []
 bat_car = []
-
 for i in range(n_baterias):
-    entrada = input().split(" ")
-    bat_pos.append(float(entrada[0]))
-    bat_car.append(float(entrada[1]))
+    bat_pos.append(float(input(f"Qual a posição da bateria {i + 1}: ")))
+    bat_car.append(float(input(f"Qual a carga da bateria {i + 1}: ")))
 
 bat_pos.append(dist)
 
@@ -38,4 +36,4 @@ for i in range(n_baterias):
         tot_tempo += pivo_tempo
         pivo_tempo = tempo
 
-print("%.4f" % tot_tempo)
+print(f"O tempo minimo possível para o carinho chegar ao final da pista é: {tot_tempo:.3f}")
